@@ -10,41 +10,47 @@
     %title Heather Pfaff
     %link{:href => "css/bootstrap.min.css", :rel => "stylesheet"}/
     %link{:href => "css/bootstrap-theme.min.css", :rel => "stylesheet"}/
+    %link{:href => "css/custom.css", :rel => "stylesheet"}/
     %script{:src => "js/ie-emulation-modes-warning.js"}
     /[if lt IE 9]
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   %body
+    #myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+      .modal-dialog
+        .modal-content
+          .modal-body
     .container
       .row
-        .col-md-4.col-md-offset-4
-          %h2.text-center Heather Pfaff
-          %hr/
-          %h3.text-center Stylist
-    .navbar.navbar-inverse{:role => "navigation"}
-      .container
-        .collapse.navbar-collapse
-          %ul.nav.navbar-nav
-            %li
-              %a{:href => "/"} Home
-            %li
-              %a{:href => "/about"} About
-            %li
-              %a{:href => "/fashion"} Fashion
-            %li
-              %a{:href => "/beauty"} Beauty
-            %li
-              %a{:href => "/covers"} Covers
-            %li
-              %a{:href => "/contact"} Contact
-    .container
-      =yield
-    .footer
-      .navbar.navbar-inverse.navbar-fixed-bottom
-        .container
-          .nav.navbar-nav
-            %p.navbar-text @Heather Pfaff 2014. All rights reserved
+        .col-md-10.col-md-offset-1
+          .container
+            .row
+              .col-md-4.col-md-offset-3
+                %h2.text-center Heather Pfaff
+                %hr/
+                %h3.text-center Stylist
+          .navbar.navbar-inverse{:role => "navigation"}
+            -# .container
+            -# .collapse.navbar-collapse
+            %ul.nav.nav-justified
+              %li
+                %a{:href => "/"} Home
+              %li
+                %a{:href => "/about"} About
+              %li
+                %a{:href => "/fashion"} Fashion
+              %li
+                %a{:href => "/beauty"} Beauty
+              %li
+                %a{:href => "/covers"} Covers
+              %li
+                %a{:href => "/contact"} Contact
+          =yield
+          .footer
+            .container
+              %p.text-muted @Heather Pfaff 2014. All rights reserved
 
-    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"}
-    %script{:src => "js/bootstrap.min.js"}
-    %script{:src => "js/ie10-viewport-bug-workaround.js"}
+  %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"}
+  %script{:src => "js/bootstrap.min.js"}
+  %script{:src => "js/custom.js"}
+  %script{:src => "js/ie10-viewport-bug-workaround.js"}
