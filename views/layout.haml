@@ -20,35 +20,35 @@
       .modal-dialog
         .modal-content
           .modal-body
+    %nav.navbar.navbar-default.navbar-static-top{:role => "navigation"}
+      .container-fluid
+        .navbar-header
+          %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => "/"} Heather Pfaff
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li{class: ('active' if true)}
+              %a{href: "/about"} About
+            %li
+              %a{href: "/fashion"} Fashion
+            %li
+              %a{href: "/beauty"} Beauty
+            %li
+              %a{href: "/covers"} Covers
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              %a{href: "/contact"} Contact
     .container
-      .row
-        .col-md-10.col-md-offset-1
-          .container
-            .row
-              .col-md-4.col-md-offset-3
-                %h2.text-center Heather Pfaff
-                %hr/
-                %h3.text-center Stylist
-          .navbar.navbar-inverse{:role => "navigation"}
-            -# .container
-            -# .collapse.navbar-collapse
-            %ul.nav.nav-justified
-              %li
-                %a{:href => "/"} Home
-              %li
-                %a{:href => "/about"} About
-              %li
-                %a{:href => "/fashion"} Fashion
-              %li
-                %a{:href => "/beauty"} Beauty
-              %li
-                %a{:href => "/covers"} Covers
-              %li
-                %a{:href => "/contact"} Contact
-          =yield
-          .footer
-            .container
-              %p.text-muted @Heather Pfaff 2014. All rights reserved
+      =yield
+    .footer
+      .container
+        %p.pull-right
+          %a{href: "#"} Back to top
+        %p.text-muted &copy; Heather Pfaff #{ Date.today.year }. All rights reserved
 
   %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"}
   %script{:src => "js/bootstrap.min.js"}
