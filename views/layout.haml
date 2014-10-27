@@ -31,7 +31,7 @@
           %a.navbar-brand{:href => "/"} Heather Pfaff
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           %ul.nav.navbar-nav
-            %li{class: ('active' if true)}
+            %li{class: ('active' if false)}
               %a{href: "/about"} About
             %li
               %a{href: "/fashion"} Fashion
@@ -42,8 +42,7 @@
           %ul.nav.navbar-nav.navbar-right
             %li
               %a{href: "/contact"} Contact
-    .container
-      =yield
+    =yield
     .footer
       .container
         %p.pull-right
