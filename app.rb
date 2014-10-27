@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'haml'
 
+set :static_cache_control, [:public, max_age: 60 * 60 * 24 * 365]
+
 before do
   @title = request.path_info.gsub('/', '').capitalize
 end
