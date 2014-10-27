@@ -1,16 +1,16 @@
 /* thumbnails */
 
-ul.row {
+ul.row-fluid {
   padding:0 0 0 0;
   margin:0 0 0 0;
 }
 
-ul.row li {
+ul.row-fluid li {
   list-style:none;
   margin-bottom:25px;
 }
 
-ul.row li img {
+ul.row-fluid li img {
   cursor: pointer;
 }
 
