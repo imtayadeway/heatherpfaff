@@ -10,10 +10,13 @@ get "/" do
 end
 
 get "/about" do
+  @active = :about
   haml :about
 end
 
 get "/fashion" do
+  @active = :fashion
+
   pattern = File.join(fashion_images_path, "*.jpg")
 
   @images = Dir.glob(pattern).map do |fn|
@@ -24,14 +27,17 @@ get "/fashion" do
 end
 
 get "/beauty" do
+  @active = :beauty
   haml :beauty
 end
 
 get "/covers" do
+  @active = :covers
   haml :covers
 end
 
 get "/contact" do
+  @active = :contact
   haml :contact
 end
 
