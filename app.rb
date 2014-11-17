@@ -18,23 +18,19 @@ end
 
 get "/fashion" do
   @active = :fashion
-
-  pattern = File.join(fashion_images_path, "*.jpg")
-
-  @images = Dir.glob(pattern).map do |fn|
-    File.join("images", "fashion", File.basename(fn))
-  end
-
+  @images = images_for(:fashion)
   haml :fashion
 end
 
 get "/beauty" do
   @active = :beauty
+  @images = images_for(:beauty)
   haml :beauty
 end
 
 get "/covers" do
   @active = :covers
+  @images = images_for(:covers)
   haml :covers
 end
 
@@ -43,7 +39,12 @@ get "/contact" do
   haml :contact
 end
 
-def fashion_images_path
+def images_for(folder)
   root = File.dirname(__FILE__)
-  File.join(root, 'public', 'images', 'fashion')
+  path = File.join(root, 'public', 'images', folder.to_s)
+  pattern = File.join(path, "*.jpg")
+
+  Dir.glob(pattern).map do |fn|
+    File.join("images", folder.to_s, File.basename(fn))
+  end
 end
