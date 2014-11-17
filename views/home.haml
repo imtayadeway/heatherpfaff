@@ -1,3 +1,6 @@
+.jumbotron
+  %h1 Heather Pfaff
+  %p Stylist
 #myCarousel.carousel.slide{"data-ride" => "carousel"}
   %ol.carousel-indicators
     %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
@@ -5,33 +8,24 @@
     %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
   .carousel-inner
     .item.active
-      %img{alt: "First slide", src: "images/home/1.png"}
-        .container
-          .carousel-caption
-            %h1 Heather Pfaff
-            %p Stylist
-    .item
-      %img{alt: "First slide", src: "images/home/1.png"}
+      %img{alt: "Fashion", src: "images/home/carousel-1.jpg"}
         .container
           .carousel-caption
             %h1 Fashion.
-            %p Cras justo odio, dapibus ac facilisis in, egestas eget quam.
             %p
               %a.btn.btn-lg.btn-primary{href: "/fashion", role: "button"} Browse Gallery
     .item
-      %img{alt: "Second slide", src: "images/fashion/1.jpg"}
+      %img{alt: "Beauty", src: "images/home/carousel-2.jpg"}
         .container
           .carousel-caption
             %h1 Beauty.
-            %p Cras justo odio, dapibus ac facilisis in, egestas eget quam.
             %p
               %a.btn.btn-lg.btn-primary{href: "/beauty", role: "button"} Browse Gallery
     .item
-      %img{alt: "Third slide", src: "images/fashion/2.jpg"}
+      %img{alt: "Covers", src: "images/home/carousel-3.jpg"}
         .container
           .carousel-caption
             %h1 Covers.
-            %p Cras justo odio, dapibus ac facilisis in, egestas eget quam.
             %p
               %a.btn.btn-lg.btn-primary{href: "/covers", role: "button"} Browse Gallery
   %a.left.carousel-control{"data-slide" => "prev", href: "#myCarousel", role: "button"}
