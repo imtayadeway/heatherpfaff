@@ -30,13 +30,3 @@ html, body {
     height: 100%;
     margin: 0 auto -40px;
 }
-
-/* carousel */
-
-.carousel-inner>.item>img, .carousel-inner>.item>a>img {
-display: block;
-height: auto;
-max-width: 100%;
-line-height: 1;
-width: 100%;
-}
