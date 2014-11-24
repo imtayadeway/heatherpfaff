@@ -1,5 +1,5 @@
 .container-fluid
   %ul.row-fluid
-    - @images.each do |image_path|
+    - @collections.each do |collection|
       %li.col-md-3
-        %img.img-responsive{src: image_path}
+        %img.img-responsive{src: collection.front}
