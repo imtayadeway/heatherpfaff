@@ -1,0 +1,21 @@
+.container-fluid
+  .row-fluid
+    .col-md-4
+      - if flash[:success]
+        .alert.alert-success{role: "alert"} #{ flash[:success] }
+      - if flash[:danger]
+        .alert.alert-danger{role: "alert"} #{ flash[:danger] }
+      - if @message.errors.any?
+        - @message.errors.full_messages.each do |message|
+          .alert.alert-danger{role: "alert"} #{ message }
+      %form.well{action: "/contact", method: "post", role: "form"}
+        .form-group
+          %label{for: "name"} Name
+          %input.form-control{type: "text", name: "name", placeholder: "Enter name"}
+        .form-group
+          %label{for: "email"} Email address
+          %input.form-control{type: "email", name: "email", placeholder: "Enter email"}
+        .form-group
+          %label{for: "body"} Message
+          %textarea.form-control{name: "body", rows: "4"}
+        %button.btn.btn-default{type: "submit"} Submit
