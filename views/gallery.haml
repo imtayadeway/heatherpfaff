@@ -7,10 +7,3 @@
             %img.img-responsive{alt: collection.title, src: collection.front}
           - collection.rest.each do |image|
             %a{"data-gallery" => "blueimp-gallery-#{ i }", href: image, title: collection.title}
-    -# - @collections.select(&:landscape?).each_with_index do |collection, i|
-    -#   .col-md-3
-    -#     %div{id: "collection-#{ i }"}
-    -#       %a.thumbnail{"data-gallery" => "blueimp-gallery-#{ i }", href: collection.front, title: collection.title}
-    -#         %img.img-responsive{alt: collection.title, src: collection.front}
-    -#       - collection.rest.each do |image|
-    -#         %a{"data-gallery" => "blueimp-gallery-#{ i }", href: image, title: collection.title}
