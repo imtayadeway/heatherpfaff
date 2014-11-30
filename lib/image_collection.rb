@@ -1,5 +1,6 @@
 class ImageCollection
   extend Enumerable
+  include Enumerable
 
   def self.all
     @all ||= []
@@ -9,19 +10,34 @@ class ImageCollection
     @all.each(&block)
   end
 
-  attr_reader :all
+  attr_reader :all, :title
 
-  def initialize(collection)
+  def initialize(title:, collection:, thumbnail: :portrait)
+    @title = title
     @all = collection.map { |image| path_for(image) }
+    @thumbnail = thumbnail.to_sym
+    fail unless [:portrait, :landscape].include?(@thumbnail)
     self.class.all << self
   end
 
+  def each(&block)
+    all.each(&block)
+  end
+
+  def portrait?
+    @thumbnail == :portrait
+  end
+
+  def landscape?
+    @thumbnail == :landscape
+  end
+
   def front
-    all.first
+    first
   end
 
   def rest
-    all.drop(1)
+    drop(1)
   end
 
   def folder

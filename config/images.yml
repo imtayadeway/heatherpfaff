@@ -1,41 +1,145 @@
 :fashion:
-  - ["02", "01", "03"]
-  - ["04", "05", "06", "07", "08", "09"]
-  - ["10", "11", "12", "13", "14", "15"]
-  - ["16", "17", "18", "19", "20"]
-  - ["21", "22", "23", "24", "25", "26"]
-  - ["28", "27", "29", "30", "31", "32"]
-  - ["33", "34", "35", "36", "37", "38"]
-  - ["39", "40", "41", "42"]
-  - ["43", "44", "45", "46", "47", "48", "49"]
-  - ["50", "51", "52", "53", "54"]
+  -
+    :title: true-to-you beauty
+    :collection: ["02", "01", "03"]
+    :thumbnail: portrait
+  -
+    :title: Most Likely to Seduce
+    :collection: ["04", "05", "06", "07", "08", "09"]
+    :thumbnail: portrait
+  -
+    :title: 8 New Sexy Essentials
+    :collection: ["10", "11", "12", "13", "14", "15"]
+    :thumbnail: portrait
+  -
+    :title: The Hot Hues for Spring
+    :collection: ["16", "17", "18", "19", "20"]
+    :thumbnail: landscape
+  -
+    :title: Isaac\'s Elements of Style
+    :collection: ["21", "22", "23", "24", "25", "26"]
+    :thumbnail: portrait
+  -
+    :title: Day-to-Night Denim
+    :collection: ["28", "27", "29", "30", "31", "32"]
+    :thumbnail: portrait
+  -
+    :title: Swept Away
+    :collection: ["33", "34", "35", "36", "37", "38"]
+    :thumbnail: portrait
+  -
+    :title: Golden Girl
+    :collection: ["39", "40", "41", "42"]
+    :thumbnail: landscape
+  -
+    :title: Wild Thing
+    :collection: ["43", "44", "45", "46", "47", "48", "49"]
+    :thumbnail: landscape
+  -
+    :title: Crush the Competition
+    :collection: ["50", "51", "52", "53", "54"]
+    :thumbnail: landscape
 
 :beauty:
-  - ["01", "02", "03"]
-  - ["04", "05"]
-  - ["06", "07"]
-  - ["08"]
-  - ["09"]
-  - ["10"]
-  - ["11", "12", "13"]
-  - ["14", "15", "16", "17"]
-  - ["18", "19", "20"]
-  - ["21", "22"]
-  - ["23", "24", "25", "26"]
-  - ["27", "28", "29"]
-  - ["30", "31"]
-  - ["32", "33", "34"]
-  - ["35", "36", "37", "38", "39", "40", "41"]
+  -
+    :title: clear skin every day!
+    :collection: ["01", "02", "03"]
+    :thumbnail: landscape
+  -
+    :title: lighten up your look
+    :collection: ["04", "05"]
+    :thumbnail: landscape
+  -
+    :title: Fire your hired guns!
+    :collection: ["06", "07"]
+    :thumbnail: portrait
+  -
+    :title: Steal the Spotlight
+    :collection: ["09", "08"]
+    :thumbnail: portrait
+  -
+    :title: Bold, Lusty Lips
+    :collection: ["10"]
+    :thumbnail: landscape
+  -
+    :title: easy summer hair
+    :collection: ["11", "12", "13"]
+    :thumbnail: landscape
+  -
+    :title: Party prep!
+    :collection: ["14", "15", "16", "17"]
+    :thumbnail: portrait
+  -
+    :title: GIFTS FROM THE SEA
+    :collection: ["18", "19", "20"]
+    :thumbnail: landscape
+  -
+    :title: Take it all off!
+    :collection: ["21", "22"]
+    :thumbnail: portrait
+  -
+    :title: look radiant
+    :collection: ["23", "24", "25", "26"]
+    :thumbnail: portrait
+  -
+    :title: The sundamentals
+    :collection: ["27", "28", "29"]
+    :thumbnail: landscape
+  -
+    :title: gam slam!
+    :collection: ["30", "31"]
+    :thumbnail: portrait
+  -
+    :title: YOU GOT GAME
+    :collection: ["32", "33", "34"]
+    :thumbnail: landscape
+  -
+    :title: SPA FOR A DAY
+    :collection: ["35", "36", "37", "38", "39", "40", "41"]
+    :thumbnail: portrait
 
 :covers:
-  - ["01", "02", "03"]
-  - ["04", "05", "06"]
-  - ["07"]
-  - ["08"]
-  - ["09"]
-  - ["10"]
-  - ["11"]
-  - ["12"]
-  - ["13"]
-  - ["14"]
-  - ["15"]
+  -
+    :title: Katy Perry
+    :collection: ["01", "02", "03"]
+    :thumbnail: portrait
+  -
+    :title: Fergie
+    :collection: ["04", "05", "06"]
+    :thumbnail: portrait
+  -
+    :title: Rihanna
+    :collection: ["07"]
+    :thumbnail: portrait
+  -
+    :title: Jessica Alba
+    :collection: ["08"]
+    :thumbnail: portrait
+  -
+    :title: Anna Faris
+    :collection: ["09"]
+    :thumbnail: portrait
+  -
+    :title: Kristen Bell
+    :collection: ["10"]
+    :thumbnail: portrait
+  -
+    :title: Hayden Panettiere
+    :collection: ["11"]
+    :thumbnail: portrait
+  -
+    :title: Katherine Heigl
+    :collection: ["12"]
+    :thumbnail: portrait
+  -
+    :title: Keira Knightley
+    :collection: ["13"]
+    :thumbnail: portrait
+  -
+    :title: Faith Hill
+    :collection: ["14"]
+    :thumbnail: portrait
+  -
+    :title: Mariah
+    :collection: ["15"]
+    :thumbnail: portrait
