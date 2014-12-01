@@ -1,6 +1,6 @@
 class SendsMail
   def self.mail(message)
-    Pony.mail(to: "imtay.wade@gmail.com",
+    Pony.mail(to: "pfaffh@gmail.com",
               from: "#{ message.email }",
               body: "#{ message.body }",
               subject: "#{ message.name } has contacted you",
