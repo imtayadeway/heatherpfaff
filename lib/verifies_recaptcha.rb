@@ -5,6 +5,8 @@ class VerifiesRecaptcha
     @response = response
     @ip = ip
     @api_response = api_request
+    puts "!!!!!!!!!!!!!!!#{ ENV['RECAPTCHA_SECRET'] }"
+    puts "!!!!!!!!!!!!!!!#{ api_response }"
   end
 
   def success?
