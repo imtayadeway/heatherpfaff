@@ -1,10 +1,12 @@
 require 'sinatra'
 require 'sinatra/flash'
 require 'net/http'
+require 'json'
 require 'haml'
 require 'pony'
 require 'active_model'
 require_relative 'lib/message'
+require_relative 'lib/verifies_recaptcha'
 require_relative 'lib/sends_mail'
 require_relative 'lib/image_collection'
 require_relative 'lib/fashion_image_collection'
@@ -56,19 +58,7 @@ post '/contact' do
   @active = :contact
   @message = Message.new(message_params)
 
-  res = Net::HTTP.post_form(
-    URI.parse('http://www.google.com/recaptcha/api/verify'),
-    {
-      'privatekey' => ENV['RECAPTCHA_SECRET'],
-      'remoteip'   => request.ip,
-      'challenge'  => params[:recaptcha_challenge_field],
-      'response'   => params[:recaptcha_response_field]
-    }
-  )
-
-  success, error_key = res.body.lines.map(&:chomp)
-
-  if success == 'true'
+  if VerifiesRecaptcha.new(params["g-recaptcha-response"], request.ip).success?
     if @message.valid?
       flash.now[:success] = "Message sent!"
       SendsMail.send(@message)
