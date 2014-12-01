@@ -5,13 +5,13 @@ file = File.open(path, "r")
 config = YAML.load(file)
 
 config[:fashion].each do |options|
-  FashionImageCollection.new(options)
+  ImageCollection::Fashion.new(options)
 end
 
 config[:beauty].each do |options|
-  BeautyImageCollection.new(options)
+  ImageCollection::Beauty.new(options)
 end
 
 config[:covers].each do |options|
-  CoverImageCollection.new(options)
+  ImageCollection::Covers.new(options)
 end

@@ -1,3 +1,4 @@
+$LOAD_PATH.unshift(File.expand_path(File.join('..', 'lib'), __FILE__))
 require 'sinatra'
 require 'sinatra/flash'
 require 'net/http'
@@ -5,13 +6,10 @@ require 'json'
 require 'haml'
 require 'pony'
 require 'active_model'
-require_relative 'lib/message'
-require_relative 'lib/verifies_recaptcha'
-require_relative 'lib/sends_mail'
-require_relative 'lib/image_collection'
-require_relative 'lib/fashion_image_collection'
-require_relative 'lib/beauty_image_collection'
-require_relative 'lib/cover_image_collection'
+require 'message'
+require 'verifies_recaptcha'
+require 'sends_mail'
+require 'image_collection'
 require_relative 'config/initializers/images'
 
 enable :sessions
@@ -32,19 +30,19 @@ end
 
 get "/fashion" do
   @active = :fashion
-  @collections = FashionImageCollection.all
+  @collections = ImageCollection::Fashion.all
   haml :fashion
 end
 
 get "/beauty" do
   @active = :beauty
-  @collections = BeautyImageCollection.all
+  @collections = ImageCollection::Beauty.all
   haml :beauty
 end
 
 get "/covers" do
   @active = :covers
-  @collections = CoverImageCollection.all
+  @collections = ImageCollection::Covers.all
   haml :covers
 end
 
