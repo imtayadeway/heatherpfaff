@@ -61,7 +61,7 @@ post '/contact' do
   if VerifiesRecaptcha.new(params["g-recaptcha-response"], request.ip).success?
     if @message.valid?
       flash.now[:success] = "Message sent!"
-      SendsMail.send(@message)
+      SendsMail.mail(@message)
     else
       flash.now[:danger] = "Message not sent!"
     end
