@@ -4,7 +4,6 @@ class SendsMail
               from: "#{ message.email }",
               body: "#{ message.body }",
               subject: "#{ message.name } has contacted you",
-              port: "587",
               via: :smtp,
               via_options: {
                 address: 'smtp.sendgrid.net',
