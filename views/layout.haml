@@ -17,9 +17,29 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     %script{src: "https://www.google.com/recaptcha/api.js", async: "", defer: ""}
   %body
-    = haml :navbar
-    .wrapper
-      =yield
+    .container.wrapper
+      .row
+        .page-header
+          %h1
+            Heather Pfaff
+            %small Stylist
+      .row
+        .col-md-2
+          %ul.nav.nav-pills.nav-stacked
+            %li{class: ('active' if @active == :home)}
+              %a{href: "/"} Home
+            %li{class: ('active' if @active == :fashion)}
+              %a{href: "/fashion"} Fashion
+            %li{class: ('active' if @active == :beauty)}
+              %a{href: "/beauty"} Beauty
+            %li{class: ('active' if @active == :covers)}
+              %a{href: "/covers"} Covers
+            %li{class: ('active' if @active == :about)}
+              %a{href: "/about"} About
+            %li{class: ('active' if @active == :contact)}
+              %a{href: "/contact"} Contact
+        .col-md-10
+          =yield
       .push
     .footer
       .container

@@ -1,19 +1,13 @@
-.page-header{style: "text-align: center;"}
-  %h1
-    Heather Pfaff
-    %small Stylist
-.container-fluid
-  .row-fluid
-    .col-md-8.col-md-offset-2
-      / The Gallery as inline carousel, can be positioned anywhere on the page
-      #blueimp-gallery-carousel.blueimp-gallery.blueimp-gallery-carousel
-        .slides
-        %h3.title
-        %a.prev ‹
-        %a.next ›
-        %a.play-pause
-        %ol.indicator
-      #links
-        %a{:href => "images/fashion/thumbnails/01.jpg", :title => "Fashion"}
-        %a{:href => "images/beauty/thumbnails/02.jpg", :title => "Beauty"}
-        %a{:href => "images/covers/thumbnails/03.jpg", :title => "Covers"}
+.row-fluid
+  / The Gallery as inline carousel, can be positioned anywhere on the page
+  #blueimp-gallery-carousel.blueimp-gallery.blueimp-gallery-carousel
+    .slides
+    %h3.title
+    %a.prev ‹
+    %a.next ›
+    %a.play-pause
+    %ol.indicator
+  #links
+    %a{:href => "images/fashion/thumbnails/01.jpg", :title => "Fashion"}
+    %a{:href => "images/beauty/thumbnails/02.jpg", :title => "Beauty"}
+    %a{:href => "images/covers/thumbnails/03.jpg", :title => "Covers"}

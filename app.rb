@@ -20,6 +20,7 @@ before do
 end
 
 get "/" do
+  @active = :home
   haml :home
 end
 
