@@ -1,3 +1,9 @@
+/* background color */
+
+body {
+  background-color: #f1f1f1;
+}
+
 /* thumbnails */
 
 ul.row-fluid {
