@@ -25,10 +25,10 @@
             %i.glyphicon.glyphicon-chevron-right
 .container-fluid
   #items
-    - @collections.each do |collection|
-      - collection.each_slice(4) do |row|
-        .row
-          - row.each do |image|
-            .col-md-3
-              %a.thumbnail{"data-gallery" => "", href: image, title: collection.title}
-                %img.img-responsive{alt: collection.title, src: image}
+    - @images.each_slice(@slice) do |row|
+      .row
+        .col-md-1
+        - row.each do |image|
+          %div{class: @slice == 2 ? "col-md-4" : "col-md-3"}
+            %a.thumbnail{"data-gallery" => "", href: image.path, title: image.title}
+              %img.img-responsive{alt: image.title, src: image.path}

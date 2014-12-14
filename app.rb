@@ -9,6 +9,7 @@ require 'active_model'
 require 'message'
 require 'verifies_recaptcha'
 require 'sends_mail'
+require 'image'
 require 'image_collection'
 require_relative 'config/initializers/images'
 
@@ -31,19 +32,22 @@ end
 
 get "/fashion" do
   @active = :fashion
-  @collections = ImageCollection::Fashion.all
+  @images = ImageCollection::Fashion.images
+  @slice = 2
   haml :fashion
 end
 
 get "/beauty" do
   @active = :beauty
-  @collections = ImageCollection::Beauty.all
+  @images = ImageCollection::Beauty.images
+  @slice = 2
   haml :beauty
 end
 
 get "/covers" do
   @active = :covers
-  @collections = ImageCollection::Covers.all
+  @images = ImageCollection::Covers.images
+  @slice = 3
   haml :covers
 end
 

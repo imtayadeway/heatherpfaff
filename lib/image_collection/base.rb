@@ -8,47 +8,27 @@ module ImageCollection
     end
 
     def self.each(&block)
-      @all.each(&block)
+      all.each(&block)
     end
 
-    attr_reader :all, :title
+    def self.images
+      all.flat_map(&:images)
+    end
 
-    def initialize(title:, collection:, thumbnail: :portrait)
+    attr_reader :images, :title
+
+    def initialize(title:, collection:)
       @title = title
-      @all = collection.map { |image| path_for(image) }
-      @thumbnail = thumbnail.to_sym
-      fail unless [:portrait, :landscape].include?(@thumbnail)
+      @images = collection.map { |name| Image.new(self, name) }
       self.class.all << self
     end
 
     def each(&block)
-      all.each(&block)
-    end
-
-    def portrait?
-      @thumbnail == :portrait
-    end
-
-    def landscape?
-      @thumbnail == :landscape
-    end
-
-    def front
-      first
-    end
-
-    def rest
-      drop(1)
+      images.each(&block)
     end
 
     def folder
       fail NotImplementedError
-    end
-
-    private
-
-    def path_for(image)
-      File.join("images", folder, "#{ image }.jpg")
     end
   end
 end
