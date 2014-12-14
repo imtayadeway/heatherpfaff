@@ -4,18 +4,16 @@
     %small Stylist
 .container-fluid
   .row-fluid
-    .col-lg-4{style: "text-align: center;"}
-      %img.img-circle.img-responsive{src: "images/fashion/thumbnails/01.jpg"}
-      %h2 Fashion
-      %p
-        %a.btn.btn-default{href: "/fashion", role: "button"} Browse Gallery
-    .col-lg-4{style: "text-align: center;"}
-      %img.img-circle.img-responsive{src: "images/beauty/thumbnails/02.jpg"}
-      %h2 Beauty
-      %p
-        %a.btn.btn-default{href: "/beauty", role: "button"} Browse Gallery
-    .col-lg-4{style: "text-align: center;"}
-      %img.img-circle.img-responsive{src: "images/covers/thumbnails/03.jpg"}
-      %h2 Covers
-      %p
-        %a.btn.btn-default{href: "/covers", role: "button"} Browse Gallery
+    .col-md-8.col-md-offset-2
+      / The Gallery as inline carousel, can be positioned anywhere on the page
+      #blueimp-gallery-carousel.blueimp-gallery.blueimp-gallery-carousel
+        .slides
+        %h3.title
+        %a.prev ‹
+        %a.next ›
+        %a.play-pause
+        %ol.indicator
+      #links
+        %a{:href => "images/fashion/thumbnails/01.jpg", :title => "Fashion"}
+        %a{:href => "images/beauty/thumbnails/02.jpg", :title => "Beauty"}
+        %a{:href => "images/covers/thumbnails/03.jpg", :title => "Covers"}
