@@ -4,22 +4,6 @@ body {
   background-color: #f1f1f1;
 }
 
-/* thumbnails */
-
-ul.row-fluid {
-  padding:0 0 0 0;
-  margin:0 0 0 0;
-}
-
-ul.row-fluid li {
-  list-style:none;
-  margin-bottom:25px;
-}
-
-ul.row-fluid li img {
-  cursor: pointer;
-}
-
 /* footer */
 
 html, body {

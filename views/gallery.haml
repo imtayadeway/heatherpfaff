@@ -24,10 +24,11 @@
             Next
             %i.glyphicon.glyphicon-chevron-right
 .container-fluid
-  .row-fluid
-    #items
-      - @collections.each do |collection|
-        - collection.each do |image|
-          .col-md-3
-            %a.thumbnail{"data-gallery" => "", href: image, title: collection.title}
-              %img.img-responsive{alt: collection.title, src: image}
+  #items
+    - @collections.each do |collection|
+      - collection.each_slice(4) do |row|
+        .row
+          - row.each do |image|
+            .col-md-3
+              %a.thumbnail{"data-gallery" => "", href: image, title: collection.title}
+                %img.img-responsive{alt: collection.title, src: image}
