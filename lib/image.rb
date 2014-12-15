@@ -7,7 +7,7 @@ class Image
   end
 
   def path
-    File.join("img", folder, "#{ name }.jpg")
+    "https://s3.amazonaws.com/heatherpfaff/img/#{ folder }/#{ name }.jpg"
   end
 
   def title
