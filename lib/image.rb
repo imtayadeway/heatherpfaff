@@ -6,8 +6,20 @@ class Image
     @name = name
   end
 
+  def filename
+    "#{ name }.jpg"
+  end
+
   def path
-    "https://s3.amazonaws.com/heatherpfaff/img/#{ folder }/#{ name }.jpg"
+    [folder_path, filename].join("/")
+  end
+
+  def thumb_path
+    [folder_path, "thumbnails", filename].join("/")
+  end
+
+  def folder_path
+    [base_path, folder].join("/")
   end
 
   def title
@@ -16,6 +28,10 @@ class Image
 
   def folder
     collection.folder
+  end
+
+  def base_path
+    "https://s3.amazonaws.com/heatherpfaff/img"
   end
 
   private

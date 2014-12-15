@@ -31,4 +31,4 @@
         - row.each do |image|
           %div{class: @slice == 2 ? "col-md-4" : "col-md-3"}
             %a.thumbnail{"data-gallery" => "", href: image.path, title: image.title}
-              %img.img-responsive{alt: image.title, src: image.path}
+              %img.img-responsive{alt: image.title, src: image.thumb_path}
