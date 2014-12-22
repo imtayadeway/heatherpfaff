@@ -10,6 +10,10 @@ li.active {
   font-weight: bold;
 }
 
+li a {
+  color: #000000;
+}
+
 /* footer */
 
 html, body {
