@@ -7,7 +7,7 @@ body {
 /* links */
 
 li.active {
-  font-weight: bold;
+  font-weight: 400;
 }
 
 li a {
