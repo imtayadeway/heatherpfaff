@@ -25,9 +25,9 @@ get "/" do
   haml :home
 end
 
-get "/about" do
-  @active = :about
-  haml :about
+get "/bio" do
+  @active = :bio
+  haml :bio
 end
 
 get "/fashion" do
