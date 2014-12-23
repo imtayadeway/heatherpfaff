@@ -24,7 +24,7 @@
             Heather Pfaff
             %small Stylist
       .row
-        .col-md-2
+        .col-xs-2
           %ul.nav.nav-stacked
             %li{class: ('active' if @active == :home)}
               %a{href: "/"} Home
@@ -38,7 +38,7 @@
               %a{href: "/bio"} Bio
             %li{class: ('active' if @active == :contact)}
               %a{href: "/contact"} Contact
-        .col-md-10
+        .col-xs-10
           =yield
       .push
     .footer
