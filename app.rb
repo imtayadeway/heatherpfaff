@@ -17,7 +17,7 @@ enable :sessions
 set :static_cache_control, [:public, max_age: 300]
 
 before do
-  @title = request.path_info.gsub('/', '').capitalize
+  @title = full_title
 end
 
 get "/" do
@@ -81,4 +81,16 @@ def message_params
     email: params[:email],
     body: params[:body]
   }
+end
+
+def full_title
+  sub_title.empty? ? base_title : [base_title, sub_title].join(" | ")
+end
+
+def base_title
+  "Heather Pfaff"
+end
+
+def sub_title
+  request.path_info.gsub('/', '').capitalize
 end
