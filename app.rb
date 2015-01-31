@@ -18,6 +18,7 @@ set :static_cache_control, [:public, max_age: 300]
 
 before do
   @title = full_title
+  @description = fetch_description
   @active = active_link
 end
 
@@ -95,4 +96,17 @@ end
 
 def basename
   request.path_info.gsub("/", "")
+end
+
+def fetch_description
+  key = basename.empty? ? :home : basename.to_sym
+  descriptions.fetch(key, "")
+end
+
+def descriptions
+  {
+    beauty: "Heather has a passion for beauty and has styled for advertising clients including Aveda, Neutrogena, Maybelline and Pantene.",
+    fashion: "Heather has been a fashion editor at Cosmopolitan, Marie Claire and Mademoiselle magazines. She has also styled for magazines such as InStyle, Glamour and Self.",
+    home: "Heather Pfaff is a fashion stylist based in NYC. She has been a fashion editor at Cosmopolitan, Marie Claire and Mademoiselle magazines",
+  }
 end
