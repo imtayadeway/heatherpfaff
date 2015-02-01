@@ -19,7 +19,8 @@ set :static_cache_control, [:public, max_age: 300]
 before do
   @title = full_title
   @description = fetch_description
-  @active = active_link
+  @active = current_page
+  @message = Message.new
 end
 
 get "/" do
@@ -48,26 +49,21 @@ get "/covers" do
   haml :covers
 end
 
-get "/contact" do
-  @message = Message.new
-  haml :contact
-end
-
 post '/contact' do
   @message = Message.new(message_params)
 
   if VerifiesRecaptcha.new(params["g-recaptcha-response"], request.ip).success?
     if @message.valid?
-      flash.now[:success] = "Message sent!"
+      flash[:success] = "Message sent!"
       SendsMail.mail(@message)
     else
-      flash.now[:danger] = "Message not sent!"
+      flash[:danger] = "Message not sent!"
     end
   else
-    flash.now[:danger] = "Please try the captcha again."
+    flash[:danger] = "Please try the captcha again."
   end
 
-  haml :contact
+  redirect "/"
 end
 
 def message_params
@@ -90,17 +86,16 @@ def sub_title
   basename.capitalize
 end
 
-def active_link
-  basename.empty? ? :home : basename.to_sym
-end
-
 def basename
   request.path_info.gsub("/", "")
 end
 
 def fetch_description
-  key = basename.empty? ? :home : basename.to_sym
-  descriptions.fetch(key, "")
+  descriptions.fetch(current_page, "")
+end
+
+def current_page
+  basename.empty? ? :home : basename.to_sym
 end
 
 def descriptions

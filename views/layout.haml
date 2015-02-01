@@ -17,6 +17,46 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     %script{src: "https://www.google.com/recaptcha/api.js", async: "", defer: ""}
   %body
+    - if flash[:success]
+      .alert.alert-success.alert-dismissable{role: "alert"}
+        %button.close{type: "button", "data-dismiss" => "alert", "aria-label" => "Close"}
+          %span{"aria-hidden" => true} ×
+        = flash[:success]
+    - if flash[:danger]
+      .alert.alert-danger.alert-dismissable{role: "alert"}
+        %button.close{type: "button", "data-dismiss" => "alert", "aria-label" => "Close"}
+          %span{"aria-hidden" => true} ×
+        = flash[:danger]
+    - if @message.errors.any?
+      - @message.errors.full_messages.each do |message|
+        .alert.alert-danger.alert-dismissable{role: "alert"}
+          %button.close{type: "button", "data-dismiss" => "alert", "aria-label" => "Close"}
+          %span{"aria-hidden" => true} ×
+          = message
+
+
+    .modal.fade#contactModal{"tabindex" => "-1"}
+      .modal-dialog
+        .modal-content
+          .modal-header
+            %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+              %span{"aria-hidden" => "true"} ×
+            %h4.modal-title Contact
+          .modal-body
+            %form{action: "/contact", method: "post", role: "form"}
+              .form-group
+                %label{for: "name"} Name
+                %input.form-control{type: "text", name: "name", placeholder: "Enter name"}
+              .form-group
+                %label{for: "email"} Email address
+                %input.form-control{type: "email", name: "email", placeholder: "Enter email"}
+              .form-group
+                %label{for: "body"} Message
+                %textarea.form-control{name: "body", rows: "4"}
+              .g-recaptcha{"data-sitekey" => "6LeLgv4SAAAAACQb5Pp2A_joznU9bHb09MWdjj6E"}
+              %br
+              %button.btn.btn-default{type: "submit"} Submit
+
     .container.wrapper
       .row
         .page-header
@@ -36,8 +76,8 @@
               %a{href: "/covers"} Covers
             %li{class: ('active' if @active == :bio)}
               %a{href: "/bio"} Bio
-            %li{class: ('active' if @active == :contact)}
-              %a{href: "/contact"} Contact
+            %li
+              %a{"data-toggle" => "modal", "data-target" => "#contactModal"} Contact
         .col-xs-10
           =yield
       .push
